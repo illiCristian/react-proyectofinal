@@ -20,7 +20,7 @@ function classNames(...classes) {
 }
 const initialStateDarkMode = localStorage.getItem("theme") === "dark";
 
-export default function NavBar2({ cantidad }) {
+export default function NavBar({ cantidad }) {
   const [darkMode, setDarkMode] = useState(initialStateDarkMode);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function NavBar2({ cantidad }) {
   return (
     <Disclosure
       as="nav"
-      className="bg-[#FFC288] transition-all duration-500 dark:bg-[#243251]">
+      className="bg-slate-200 transition-all duration-500 dark:bg-slate-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

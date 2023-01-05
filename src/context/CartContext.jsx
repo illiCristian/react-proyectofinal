@@ -24,6 +24,27 @@ const CartProvider = ({ children }) => {
   const cartTotal = () => {
     return cart.reduce((total, item) => (total += item.quantity), 0);
   };
+
+  /* const increase = () => count < itemStock && setCount(count + 1);
+  const decrease = () => count > initial && setCount(count - 1); */
+  const increase = (quantity, item) => {
+    if (item.stock > 0) {
+      if (isInCart(item.id)) {
+        let pos = cart.findIndex((x) => x.id === item.id);
+        cart[pos].quantity += quantity;
+        setCart([...cart]);
+      }
+    }
+  };
+  const decrease = (quantity, item) => {
+    if (item.quantity > 0) {
+      if (isInCart(item.id)) {
+        let pos = cart.findIndex((x) => x.id === item.id);
+        cart[pos].quantity -= quantity;
+        setCart([...cart]);
+      }
+    }
+  };
   const sumTotal = () => {
     return cart.reduce(
       (total, item) => (total += item.quantity * item.price),
@@ -42,6 +63,8 @@ const CartProvider = ({ children }) => {
         clearCart,
         cartTotal,
         sumTotal,
+        increase,
+        decrease,
       }}>
       {children}
     </CartContext.Provider>

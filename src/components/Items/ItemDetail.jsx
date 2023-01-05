@@ -20,13 +20,13 @@ const ItemDetail = ({ item }) => {
     setItemStock(item.stock);
   }, [item]);
   return (
-    <div className="container">
-      <div className="relative flex min-h-full min-w-full items-center overflow-hidden bg-yellow-600 p-5 dark:bg-blue-800 lg:p-10">
+    <div>
+      <div className="relative flex min-h-full min-w-full items-center overflow-hidden bg-slate-200 p-5 dark:bg-blue-800 lg:p-10 ">
         <div className="relative mx-auto w-full max-w-6xl rounded bg-white p-10 text-gray-800 shadow-xl md:text-left lg:p-20">
-          <div className="-mx-10 items-center md:flex">
-            <div className="mb-10 w-full px-10 md:mb-0 md:w-1/2">
+          <div className="-mx-10 items-center sm:flex">
+            <div className="mb-4 w-48 px-10 sm:mb-10 sm:w-96 md:mb-0 md:w-1/2">
               <div className="relative">
-                <img src={item.url} className="relative z-10 w-full" alt="" />
+                <img src={item.url} className="relative z-10 w-full " alt="" />
                 <div className="absolute top-10 bottom-10 left-10 right-10 z-0 border-4 border-yellow-200"></div>
               </div>
             </div>
@@ -56,16 +56,16 @@ const ItemDetail = ({ item }) => {
                     .99
                   </span>
                 </div>
-                <div className="inline-block align-bottom">
+                {/*  <div className="inline-block align-bottom">
                   <button className="rounded-full bg-yellow-300 px-10 py-2 font-semibold text-yellow-900 opacity-75 hover:text-gray-900 hover:opacity-100">
                     <i className="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW
                   </button>
-                </div>
+                </div> */}
                 <div>
                   {goToCart ? (
                     <Link to={"/cart"}> Terminar la compra</Link>
                   ) : (
-                    <ItemCount stock={10} initial={0} onAdd={onAdd} />
+                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
                   )}
                 </div>
               </div>

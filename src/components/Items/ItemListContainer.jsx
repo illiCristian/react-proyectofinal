@@ -12,8 +12,10 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import Loading from "../Loading";
 const ItemListContainer = ({}) => {
   const [listProducts, setListProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   /* useEffect(() => {
@@ -34,6 +36,7 @@ const ItemListContainer = ({}) => {
         setListProducts(res.docs.map((el) => ({ id: el.id, ...el.data() })))
       );
     }
+    setLoading(false);
   }, [id]);
   //   useEffect(() => {
   //   const db = getFirestore();
@@ -51,7 +54,7 @@ const ItemListContainer = ({}) => {
   }, []); */
   return (
     <div>
-      <ItemList listaProductos={listProducts} />
+      {loading ? <Loading /> : <ItemList listaProductos={listProducts} />}
     </div>
   );
 };

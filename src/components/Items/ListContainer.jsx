@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react";
 import { products } from "../../utils/products";
 import { customPromise } from "../../utils/customPromise";
 import Item from "./Item";
@@ -18,3 +18,4 @@ const ListContainer = () => {
 };
 
 export default ListContainer;
+ */
