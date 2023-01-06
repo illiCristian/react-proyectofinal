@@ -5,7 +5,7 @@ import { Card } from "flowbite-react";
 const Carousel1 = () => {
   return (
     <>
-      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+      <div className="mt-1 h-56 sm:h-64 xl:h-80 2xl:h-96">
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
           <Carousel className="w-full">
             <img src="https://i.ibb.co/Mpg6Y59/img3.jpg" alt="..." />

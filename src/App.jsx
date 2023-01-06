@@ -18,10 +18,11 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <NavBar2 cantidad={2} />
-        <Home />
+        {/* <Home /> */}
         <Routes>
           {/* Para esta ruta le vamos a definir "productos por ejemplo" */}
-          <Route path={"/"} element={<ItemListContainer />} />
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/listaproductos"} element={<ItemListContainer />} />
           <Route path={"/category/:id"} element={<ItemListContainer />} />
           <Route path={"/item/:id"} element={<ItemDetailContainer />} />
           <Route path={"*"} element={<Error404 />} />

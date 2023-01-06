@@ -43,7 +43,7 @@ const Table = () => {
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={() => decrease(1, el)}
-                      className="inline-flex items-center rounded-full border border-gray-300 bg-white p-1 text-sm font-medium text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className="inline-flex items-center rounded-full border border-gray-600 bg-white p-1 text-sm font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:border-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                       type="button">
                       <span className="sr-only">Quantity button</span>
                       <svg
@@ -62,14 +62,13 @@ const Table = () => {
                       <input
                         type="number"
                         id="first_product"
-                        className="block w-14 rounded-lg border border-gray-300 bg-gray-50 px-2.5 py-1 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                        className="block w-14 rounded-lg border border-gray-800 bg-gray-100 px-2.5 py-1 text-center text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                         placeholder={el.quantity}
-                        required
                       />
                     </div>
                     <button
                       onClick={() => increase(1, el)}
-                      className="inline-flex items-center rounded-full border border-gray-300 bg-white p-1 text-sm font-medium text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className="inline-flex items-center rounded-full border border-gray-600 bg-white p-1 text-sm font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                       type="button">
                       <span className="sr-only">Quantity button</span>
                       <svg

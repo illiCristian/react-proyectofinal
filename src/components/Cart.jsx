@@ -63,34 +63,6 @@ const Cart = () => {
           </button>
         </Link>
       </div>
-
-      {/* <div className="container grid grid-cols-12 items-start gap-6 pb-16 pt-4">
-        <div className="col-span-4 rounded border border-gray-200 p-4">
-          <div className="space-y-2">
-            {cart.map((el) => (
-              <div key={el.id} className="flex justify-between">
-                <div key={el.id} className="border-b-8">
-                  <h5 className="font-medium text-gray-800">{el.name}</h5>
-                  <p className="text-sm text-gray-600">
-                    Descripcion: {el.description}
-                  </p>
-
-                  <p className="text-gray-600">Cantidad: {el.quantity}</p>
-                  <p className="font-medium text-gray-800">
-                    Precio Unidad ${el.price}
-                  </p>
-                  <p className="font-medium text-gray-800">
-                    SubTotal ${el.price * el.quantity}
-                  </p>
-                  <button onClick={() => removeProduct(el.id)}>
-                    <IoIosTrash /> Remover Producto
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };
