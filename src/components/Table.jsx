@@ -3,11 +3,9 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 const Table = () => {
   const { cart, increase, decrease, removeProduct } = useContext(CartContext);
-
-  console.log(cart.map((el) => el.quantity));
   return (
     <>
-      <div className="relative overflow-x-auto shadow-md ">
+      <div className="relative overflow-x-auto shadow-md">
         <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400">
           <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
             <tr className="border-b-2">

@@ -34,7 +34,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           onClick={() => {
             addToCart(count);
           }}
-          className="mt-4 w-full rounded-xl bg-indigo-600 py-2 text-xl text-white shadow-lg hover:bg-orange-200">
+          className="mt-4 w-auto rounded-xl bg-indigo-600 p-4 py-2 text-xl text-white shadow-lg hover:bg-slate-500 dark:bg-green-700 dark:hover:bg-slate-300">
           Agregar al carrito{" "}
         </button>
       )}

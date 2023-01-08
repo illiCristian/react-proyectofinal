@@ -42,7 +42,7 @@ const Cart = () => {
   } */
   return (
     <div>
-      <div>
+      <div className="bg-slate-200 p-5 shadow-sm dark:bg-gray-800">
         <Table />
       </div>
       <div className="mt-1 flex justify-around dark:bg-gray-800">

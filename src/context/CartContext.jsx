@@ -19,6 +19,15 @@ const CartProvider = ({ children }) => {
       setCart([...cart, { ...item, quantity: quantity }]);
     }
   };
+  /* Local storage del carrito */
+  useEffect(() => {
+    const dataLs = JSON.parse(localStorage.getItem("cart")) ?? [];
+    setCart(dataLs);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const removeProduct = (id) => setCart(cart.filter((el) => el.id !== id));
   const clearCart = () => setCart([]);
   const cartTotal = () => {
@@ -48,9 +57,9 @@ const CartProvider = ({ children }) => {
       0
     );
   };
-  useEffect(() => {
+  /* useEffect(() => {
     setCart(cart);
-  }, [cart]);
+  }, [cart]); */
   return (
     <CartContext.Provider
       value={{
