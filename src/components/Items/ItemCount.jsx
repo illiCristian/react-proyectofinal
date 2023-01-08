@@ -39,16 +39,16 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         </button>
       )}
       <div className="container mt-4 flex flex-row rounded border-slate-700  ">
-        <div className="flex h-10 w-10 items-center justify-center border border-slate-700 text-center">
+        <div className="flex h-10 w-10 items-center justify-center border-2 border-gray-800 text-center">
           <button onClick={decrease}>-</button>
         </div>
-        <div className="flex h-10 w-10 items-center justify-center border border-slate-700 text-center">
+        <div className="flex h-10 w-10 items-center justify-center  border-2 border-slate-700 text-center ">
           <span>{count}</span>
         </div>
-        <div className="flex h-10 w-10 items-center justify-center border border-slate-700 text-center">
+        <div className="flex h-10 w-10 items-center justify-center border-2 border-slate-700 text-center">
           <button onClick={increase}>+</button>
         </div>
-        <div className="ml-4 flex items-center justify-center">
+        <div className="ml-4 flex items-center justify-center ">
           <h2 className="font-medium text-black">
             Stock Disponible <span>{stock}</span>{" "}
           </h2>

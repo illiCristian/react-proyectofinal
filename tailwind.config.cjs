@@ -8,6 +8,10 @@ module.exports = {
   ],
 
   theme: {
+    screens: {
+      sm: "700px",
+      // => @media (min-width: 640px) { ... }
+    },
     extend: {},
   },
   plugins: [require("./node_modules/flowbite/plugin")],

@@ -12,6 +12,7 @@ const navigation = [
   { name: "Remeras", to: "/category/remeras", current: true },
   { name: "Pantalones", to: "/category/pantalones", current: false },
   { name: "Chombas", to: "/category/chombas", current: false },
+  { name: "Camisas", to: "/category/camisas", current: false },
   { name: "Contactanos", to: "/contactanos", current: false },
 ];
 
@@ -39,8 +40,8 @@ export default function NavBar({ cantidad }) {
       className="bg-slate-200 transition-all duration-500 dark:bg-slate-800">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl border-b px-2 shadow-lg sm:px-6 lg:px-8">
-            <div className="relative flex h-20 items-center justify-between">
+          <div className="lg:px-8 mx-auto max-w-7xl border-b px-2 shadow-lg sm:px-6">
+            <div className="relative flex h-20 items-center justify-around">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex  items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -53,17 +54,17 @@ export default function NavBar({ cantidad }) {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex-shrink-0 pl-[80px] sm:flex sm:pl-0">
                   <NavLink to="/">
                     <img
-                      className="ml-[] block h-12 w-auto rounded-md lg:hidden"
+                      className="lg:hidden ml-[] block h-12 w-auto rounded-md"
                       src="https://images.template.net/wp-content/uploads/2017/04/Logo-Design1.jpg"
                       alt="Your Company"
                     />
                   </NavLink>
                   <NavLink to="/">
                     <img
-                      className="hidden h-8 w-auto rounded-md lg:block"
+                      className="lg:block hidden h-8 w-auto rounded-md"
                       src="https://images.template.net/wp-content/uploads/2017/04/Logo-Design1.jpg"
                       alt="Your Company"
                     />
@@ -71,7 +72,7 @@ export default function NavBar({ cantidad }) {
                 </div>
 
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="mt-1 flex space-x-1 align-middle md:mt-0">
+                  <div className="md:mt-0 mt-1 flex space-x-1 align-middle">
                     {navigation.map((item) => (
                       <NavLink
                         key={item.name}
@@ -80,7 +81,7 @@ export default function NavBar({ cantidad }) {
                           item.current
                             ? "bg-gray-900 text-white"
                             : "font-semibold text-black transition-all duration-500 hover:bg-gray-600 hover:text-white dark:text-white",
-                          "rounded-md px-2 py-2  text-base md:text-lg"
+                          "md:text-lg rounded-md px-2  py-2 text-base"
                         )}
                         aria-current={item.current ? "page" : undefined}>
                         {item.name}

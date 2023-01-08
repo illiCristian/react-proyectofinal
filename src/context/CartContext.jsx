@@ -24,9 +24,6 @@ const CartProvider = ({ children }) => {
   const cartTotal = () => {
     return cart.reduce((total, item) => (total += item.quantity), 0);
   };
-
-  /* const increase = () => count < itemStock && setCount(count + 1);
-  const decrease = () => count > initial && setCount(count - 1); */
   const increase = (quantity, item) => {
     if (item.stock > 0) {
       if (isInCart(item.id)) {
@@ -37,7 +34,7 @@ const CartProvider = ({ children }) => {
     }
   };
   const decrease = (quantity, item) => {
-    if (item.quantity > 0) {
+    if (item.quantity > 1) {
       if (isInCart(item.id)) {
         let pos = cart.findIndex((x) => x.id === item.id);
         cart[pos].quantity -= quantity;
