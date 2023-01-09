@@ -4,7 +4,7 @@ import Item from "./Item";
 const ItemList = ({ listaProductos }) => {
   return (
     <div className="mt-1 grid min-h-screen justify-center bg-slate-200 py-20 transition-all duration-500 dark:bg-gray-800 ">
-      <div className="grid gap-2 transition-all duration-500 dark:bg-slate-800 sm:grid-cols-2">
+      <div className="grid gap-2 p-4 transition-all duration-500 dark:bg-slate-800 sm:grid-cols-2 md:grid-cols-3">
         {listaProductos.map((el) => (
           <Item
             key={el.id}

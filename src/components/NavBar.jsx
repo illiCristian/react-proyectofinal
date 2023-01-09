@@ -1,29 +1,21 @@
-import { Fragment } from "react";
-import React, { useEffect, useRef, useState } from "react";
 
+import React, { useEffect, useRef, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import CardWidget from "./CardWidget";
 import IconSun from "./Icons/IconSun";
 import IconMoon from "./Icons/IconMoon";
-import { Link, Navigate, NavLink } from "react-router-dom";
-
-const navigation = [
-  { name: "Remeras", to: "/category/remeras", current: true },
-  { name: "Pantalones", to: "/category/pantalones", current: false },
-  { name: "Chombas", to: "/category/chombas", current: false },
-  { name: "Camisas", to: "/category/camisas", current: false },
-  { name: "Contactanos", to: "/contactanos", current: false },
-];
+import { NavLink, useLocation, useParams } from "react-router-dom";
+import { navigation } from "../utils/navbar";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 const initialStateDarkMode = localStorage.getItem("theme") === "dark";
 
-export default function NavBar({ cantidad }) {
+export default function NavBar() {
   const [darkMode, setDarkMode] = useState(initialStateDarkMode);
-
+  let location = useLocation().pathname;
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -40,9 +32,9 @@ export default function NavBar({ cantidad }) {
       className="bg-slate-200 transition-all duration-500 dark:bg-slate-800">
       {({ open }) => (
         <>
-          <div className="lg:px-8 mx-auto max-w-7xl border-b px-2 shadow-lg sm:px-6">
+          <div className="mx-auto max-w-7xl border-b px-2 shadow-lg sm:px-6 lg:px-8">
             <div className="relative flex h-20 items-center justify-around">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center  sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex  items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -57,33 +49,35 @@ export default function NavBar({ cantidad }) {
                 <div className="flex-shrink-0 pl-[80px] sm:flex sm:pl-0">
                   <NavLink to="/">
                     <img
-                      className="lg:hidden ml-[] block h-12 w-auto rounded-md"
+                      /* ml-[] */
+                      className=" block h-12 w-auto rounded-md lg:hidden"
                       src="https://images.template.net/wp-content/uploads/2017/04/Logo-Design1.jpg"
                       alt="Your Company"
                     />
                   </NavLink>
                   <NavLink to="/">
                     <img
-                      className="lg:block hidden h-8 w-auto rounded-md"
+                      className="hidden h-8 w-auto rounded-md lg:block"
                       src="https://images.template.net/wp-content/uploads/2017/04/Logo-Design1.jpg"
                       alt="Your Company"
                     />
                   </NavLink>
                 </div>
-
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="md:mt-0 mt-1 flex space-x-1 align-middle">
+                  <div className="mt-1 flex space-x-1 align-middle md:mt-0">
                     {navigation.map((item) => (
                       <NavLink
                         key={item.name}
                         to={item.to}
                         className={classNames(
-                          item.current
+                          location === item.to
                             ? "bg-gray-900 text-white"
                             : "font-semibold text-black transition-all duration-500 hover:bg-gray-600 hover:text-white dark:text-white",
-                          "md:text-lg rounded-md px-2  py-2 text-base"
+                          "rounded-md px-2 py-2  text-base md:text-lg"
                         )}
-                        aria-current={item.current ? "page" : undefined}>
+                        aria-current={
+                          location === item.to ? "page" : undefined
+                        }>
                         {item.name}
                       </NavLink>
                     ))}
@@ -92,7 +86,7 @@ export default function NavBar({ cantidad }) {
               </div>
 
               <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <CardWidget cantidad={cantidad} />
+                <CardWidget />
               </div>
               <div className="flex items-center pl-2">
                 <button onClick={() => setDarkMode(!darkMode)}>
@@ -110,12 +104,12 @@ export default function NavBar({ cantidad }) {
                     to={item.to}
                     key={item.name}
                     className={classNames(
-                      item.current
-                        ? "bg-gray-400 dark:text-gray-200"
+                      location === item.to
+                        ? "bg-gray-500 dark:text-gray-200"
                         : " hover:bg-gray-700 hover:text-white dark:text-gray-200",
-                      "block rounded-md px-3 py-2 text-base font-medium"
+                      "block rounded-md px-3 py-2 text-left text-base font-medium"
                     )}
-                    aria-current={item.current ? "page" : undefined}>
+                    aria-current={location === item.to ? "page" : undefined}>
                     {item.name}
                   </NavLink>
                 ))}
@@ -127,15 +121,3 @@ export default function NavBar({ cantidad }) {
     </Disclosure>
   );
 }
-/* navigation.map((item) => (
-                  key={item.name}
-                  to={item.to}
-                  className=
-                  {classNames(
-                    item.current
-                      ? "bg-gray-400 dark:text-gray-200"
-                      : " hover:bg-gray-700 hover:text-white dark:text-gray-200",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                  {item.name} */

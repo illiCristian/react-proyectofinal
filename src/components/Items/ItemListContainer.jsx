@@ -17,7 +17,6 @@ const ItemListContainer = ({}) => {
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-
   /* useEffect(() => {
     customPromise(products).then((res) =>
       setListProducts(id ? res.filter((el) => el.categoria === id) : res)

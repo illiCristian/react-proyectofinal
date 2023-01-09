@@ -16,7 +16,13 @@ const Galeria = () => {
       <div className="m-auto max-w-[1100px]">
         <div className="flex flex-wrap justify-around">
           <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
-            <img className="block w-full" src={image1} alt="" />
+            <img
+              className="block h-[230px] w-full"
+              src={
+                "https://http2.mlstatic.com/D_NQ_NP_936504-MLA31979001433_082019-O.jpg"
+              }
+              alt=""
+            />
             <div className=" overlay ">
               {/* overlay absolute top-0 flex h-full w-full flex-col justify-center from-cyan-200 to-cyan-400 text-center text-[18px] tracking-widest mix-blend-multiply transition hover:bg-gradient-to-r hover:opacity-100*/}
               <Link to={"/category/pantalones"}>
@@ -25,7 +31,13 @@ const Galeria = () => {
             </div>
           </div>
           <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
-            <img className="block w-full" src={image2} alt="" />
+            <img
+              className="block h-[230px] w-full "
+              src={
+                "https://imagenes.cordobavende.com/medianas/chombas-lisas-somos-fabricantes-44165288-1-1.jpg"
+              }
+              alt=""
+            />
             <div className="overlay">
               <Link to={"/category/chombas"}>
                 <h3>Chombas</h3>
@@ -33,7 +45,13 @@ const Galeria = () => {
             </div>
           </div>
           <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
-            <img className="block w-full" src={image3} alt="" />
+            <img
+              className="block h-[230px] w-full"
+              src={
+                "https://d3ugyf2ht6aenh.cloudfront.net/stores/533/749/products/remeras-cuello-redondo1-29e6a0fbb0f812b0d815125364200182-480-0.jpg"
+              }
+              alt=""
+            />
             <div className="overlay">
               <Link to={"/category/remeras"}>
                 <h3>Remeras</h3>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Form = () => {
   return (
     <>
-      <form className="dark:bg-gray-800">
+      <form className="dark:bg-gray-800 ">
         <div className="mb-6 grid gap-6 md:grid-cols-2 ">
           <div>
             <label

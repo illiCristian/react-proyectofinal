@@ -1,4 +1,3 @@
-// Aca va el boton con el contador
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -23,18 +22,25 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <div>
       {vendido ? (
-        <Link to={"/cart"}>
-          <button className="mt-4 w-full rounded-xl bg-indigo-600 py-2 text-xl text-white shadow-lg hover:bg-orange-200">
-            Terminar mi compra{" "}
-          </button>{" "}
-          Terminar mi compra
-        </Link>
+        <>
+          <Link to={"/cart"}>
+            <button className="mt-4 w-full rounded-xl bg-black py-2 text-xl text-white shadow-lg hover:bg-slate-400">
+              Terminar mi compra{" "}
+            </button>{" "}
+          </Link>
+
+          <Link to={"/listaproductos"}>
+            <button className="mt-4 w-full rounded-xl bg-black py-2 text-xl text-white shadow-lg hover:bg-slate-400">
+              Seguir Comprando{" "}
+            </button>{" "}
+          </Link>
+        </>
       ) : (
         <button
           onClick={() => {
             addToCart(count);
           }}
-          className="mt-4 w-auto rounded-xl bg-indigo-600 p-4 py-2 text-xl text-white shadow-lg hover:bg-slate-500 dark:bg-green-700 dark:hover:bg-slate-300">
+          className="mt-4 w-auto rounded-xl bg-black p-4 py-2 text-xl text-white shadow-lg hover:bg-slate-500 dark:bg-slate-300 dark:text-black dark:hover:bg-slate-300">
           Agregar al carrito{" "}
         </button>
       )}
