@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from "react";
-
+import Swal from "sweetalert2";
 export const CartContext = createContext([]);
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -24,6 +24,27 @@ const CartProvider = ({ children }) => {
 
   const removeProduct = (id) => setCart(cart.filter((el) => el.id !== id));
   const clearCart = () => setCart([]);
+  const vaciarCarrito = () => {
+    if (cart.length > 0) {
+      Swal.fire({
+        title: "¿Desea borrar todo el carrito?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, Borrar todo",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          clearCart();
+          Swal.fire(
+            "Borrado",
+            "Los items en el carrito fueron borrados",
+            "success"
+          );
+        }
+      });
+    }
+  };
   const cartTotal = () => {
     return cart.reduce((total, item) => (total += item.quantity), 0);
   };
@@ -62,6 +83,7 @@ const CartProvider = ({ children }) => {
         sumTotal,
         increase,
         decrease,
+        vaciarCarrito,
       }}>
       {children}
     </CartContext.Provider>

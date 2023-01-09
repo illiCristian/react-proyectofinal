@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import { Flowbite } from "flowbite-react";
 import GeneratedOrder from "./components/GeneratedOrder";
 import Contactanos from "./components/Contactanos";
+
 function App() {
   return (
     <CartProvider>

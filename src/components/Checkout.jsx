@@ -16,6 +16,7 @@ const Checkout = () => {
   const { cart, sumTotal, clearCart } = useContext(CartContext);
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
+  const [direccion, setDireccion] = useState("");
   const [telefono, setTelefono] = useState("");
   const [orderId, setOrderId] = useState("");
 
@@ -26,7 +27,7 @@ const Checkout = () => {
         name: nombre,
         email: email,
         phone: telefono,
-        addres: "siempre viva 12345",
+        addres: direccion,
       },
       items: cart.map((el) => ({
         id: el.id,
@@ -50,8 +51,8 @@ const Checkout = () => {
   };
 
   return (
-    <>
-      <form className="m-10 dark:bg-gray-800">
+    <div>
+      <form className="mt-1 mb-1 bg-slate-200 p-8 dark:bg-gray-800">
         <div className=" mb-6 grid gap-6 md:grid-cols-2">
           <div>
             <label
@@ -64,7 +65,7 @@ const Checkout = () => {
               type="text"
               id="first_name"
               className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              placeholder="John"
+              placeholder="Juan"
               required
             />
           </div>
@@ -87,6 +88,21 @@ const Checkout = () => {
         </div>
         <div className="mb-6">
           <label
+            htmlFor="direccion"
+            className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+            Direccion
+          </label>
+          <input
+            onInput={(e) => setDireccion(e.target.value)}
+            type="text"
+            id="direccion"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            placeholder="Av Siempre Viva 123"
+            required
+          />
+        </div>
+        <div className="mb-6">
+          <label
             htmlFor="email"
             className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
             Email address
@@ -96,7 +112,7 @@ const Checkout = () => {
             type="email"
             id="email"
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-            placeholder="john.doe@company.com"
+            placeholder="juan.doe@gmail.com"
             required
           />
         </div>
@@ -118,7 +134,7 @@ const Checkout = () => {
           ""
         )}
       </div>
-    </>
+    </div>
   );
 };
 

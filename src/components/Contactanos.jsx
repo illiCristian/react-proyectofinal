@@ -3,7 +3,7 @@ import React from "react";
 const Contactanos = () => {
   return (
     <>
-      <form className="p-8 transition-all duration-500 dark:bg-slate-800">
+      <form className="min-h-screen p-8 transition-all duration-500 dark:bg-slate-800">
         <div className="group relative z-0 mb-6 w-full">
           <input
             type="email"
