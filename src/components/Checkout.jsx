@@ -6,10 +6,12 @@ import {
   updateDoc,
   writeBatch,
   getDocs,
+  Firestore,
+
 } from "firebase/firestore";
-import { Alert } from "flowbite-react";
-import { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+
+import { useContext, useRef, useState } from "react";
+import { Link, useHref } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import GeneratedOrder from "./GeneratedOrder";
 const Checkout = () => {
@@ -19,6 +21,9 @@ const Checkout = () => {
   const [direccion, setDireccion] = useState("");
   const [telefono, setTelefono] = useState("");
   const [orderId, setOrderId] = useState("");
+
+  cart.forEach((items) => {});
+  const itemId = "";
 
   const handleClick = () => {
     const fecha = new Date();
@@ -40,13 +45,12 @@ const Checkout = () => {
         fecha.getMonth() + 1
       }-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`,
     };
+    if (!order.buyer.name.trim()) {
+      return console.log("campo name vacio");
+    }
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order).then((orderId) => setOrderId(orderId.id));
-    /* const batch = writeBatch(db);
-    const updateOrder = doc(db, "orders", orderId.id);
-    batch.update(updateOrder, { stock: stock - el.quantity });
-    batch.commit(); */
     clearCart();
   };
 
@@ -61,15 +65,16 @@ const Checkout = () => {
               Nombre completo
             </label>
             <input
-              onInput={(e) => setNombre(e.target.value)}
+              /* onInput={(e) => setNombre(e.target.value)} */
               type="text"
               id="first_name"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
               className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               placeholder="Juan"
               required
             />
           </div>
-
           <div>
             <label
               htmlFor="phone"
@@ -77,7 +82,8 @@ const Checkout = () => {
               Telefono
             </label>
             <input
-              onInput={(e) => setTelefono(e.target.value)}
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
               type="tel"
               id="phone"
               className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
@@ -93,7 +99,8 @@ const Checkout = () => {
             Direccion
           </label>
           <input
-            onInput={(e) => setDireccion(e.target.value)}
+            value={direccion}
+            onChange={(e) => setDireccion(e.target.value)}
             type="text"
             id="direccion"
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
@@ -108,7 +115,8 @@ const Checkout = () => {
             Email address
           </label>
           <input
-            onInput={(e) => setEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             id="email"
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
@@ -119,7 +127,7 @@ const Checkout = () => {
 
         <button
           onClick={handleClick}
-          type="button"
+          type="submit"
           className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto">
           Generar orden de compra
         </button>

@@ -10,14 +10,6 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-
-  /* useEffect(() => {
-    customPromise(products).then((res) =>
-      setItem(res.find((el) => el.id === parseInt(id)))
-    );
-    console.log(item);
-  }, [id]); */
-
   useEffect(() => {
     const querydb = getFirestore();
     const queryDoc = doc(querydb, "items", id);

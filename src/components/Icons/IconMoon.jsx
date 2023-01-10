@@ -1,4 +1,3 @@
-import React from "react";
 
 function MoonIcon({ fill = "#fff", ...props }) {
   return (

@@ -1,7 +1,4 @@
-// @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
-
 import ItemCount from "./ItemCount";
-
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
@@ -10,12 +7,10 @@ const ItemDetail = ({ item }) => {
   const [itemStock, setItemStock] = useState(0);
   const { addProduct, cart } = useContext(CartContext);
   const [goToCart, setGoToCart] = useState(false);
-
   const onAdd = (quantity) => {
     setItemStock(itemStock - quantity);
     addProduct(item, quantity);
   };
-
   useEffect(() => {
     setItemStock(item.stock);
   }, [item]);
@@ -35,14 +30,7 @@ const ItemDetail = ({ item }) => {
                 <h1 className="mb-5 text-2xl font-bold uppercase">
                   {item.name}
                 </h1>
-                <p className="text-sm">
-                  {item.description}{" "}
-                  {/* <a
-                    href="#"
-                    className="inline-block border-b border-gray-900 text-xs leading-none text-gray-900 opacity-50 hover:opacity-100">
-                    MORE <i className="mdi mdi-arrow-right"></i>
-                  </a> */}
-                </p>
+                <p className="text-sm">{item.description} </p>
               </div>
               <div>
                 <div className="mr-5 inline-block align-bottom">

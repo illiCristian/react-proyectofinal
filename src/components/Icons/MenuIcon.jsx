@@ -1,5 +1,3 @@
-import React from "react";
-
 const MenuIcon = () => {
   return (
     <div className="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-3xl bg-white p-2 hover:bg-slate-200">
