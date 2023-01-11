@@ -1,10 +1,11 @@
 
-*[Título e imagen de portada](#Título-e-imagen-de-portada)
+
   <h1 align="center">Proyecto final React Ecommerce creado por Cristian Illi para el curso de Coderhouse </h1>
   
 *[Insignias](#insignias)
 
-*[Descripción del proyecto](#descripción-del-proyecto)\
+:memo:
+Descripción del proyecto \
   ● Un usuario puede ingresar, navegar por los productos e ir a sus detalles. \
   ● Desde el detalle puede ver la descripción, foto y precio e ingresarlo al
 carrito.\
@@ -20,7 +21,6 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 :construction: Proyecto Finalizado :construction:
 </h4>
 
-*[Características de la aplicación y demostración](#Características-de-la-aplicación-y-demostración)
 
 ## :hammer:Funcionalidades del proyecto
 
@@ -29,12 +29,18 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 - `Funcionalidad 3`: Generar una orden de compra de 1 o mas productos
 - `Funcionalidad 4`: Ecommerce creado con Diseño full responsive
 
-*[Acceso al proyecto](#acceso-proyecto)
+\## 📁 Acceso al proyecto
+
+:globe_with_meridians: https://ecommerce-react-illi-cristian.netlify.app/ :globe_with_meridians:
+
+:white_check_mark: Tecnologías utilizadas\
+:white_check_mark: React\
+:white_check_mark: Firebase / Firestore \
+:white_check_mark: Tailwind Css / Flowbite \
+:white_check_mark: Sweet Alert \
 
 
-*[Tecnologías utilizadas](#tecnologías-utilizadas)
-
-*[Personas Contribuyentes](#personas-contribuyentes)
+*Personas Contribuyentes
 
 *[Personas-Desarrolladores del Proyecto](#personas-desarrolladores)
 
