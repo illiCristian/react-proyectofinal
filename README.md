@@ -39,11 +39,8 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 :white_check_mark: Tailwind Css / Flowbite \
 :white_check_mark: Sweet Alert \
 
+Personas-Desarrolladores del Proyecto
 
-*Personas Contribuyentes
+:bust_in_silhouette: Illi Cristian
 
-*[Personas-Desarrolladores del Proyecto](#personas-desarrolladores)
 
-* [Licencia](#licencia)
-
-*[Conclusión](#conclusión)
