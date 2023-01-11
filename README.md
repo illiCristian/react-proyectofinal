@@ -34,7 +34,7 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 
 :globe_with_meridians: https://ecommerce-react-illi-cristian.netlify.app/ :globe_with_meridians:
 
-Tecnologías utilizadas\
+<h3>Tecnologías utilizadas<h3>
 
 :white_check_mark: React\
 :white_check_mark: Firebase / Firestore \
