@@ -28,7 +28,7 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 - `Funcionalidad 2`: Navegar por los productos y ver detalles
 - `Funcionalidad 3`: Generar una orden de compra de 1 o mas productos
 - `Funcionalidad 4`: Ecommerce creado con Diseño full responsive
-
+- `Funcionalidad 5`: Cuenta con Dark/Light mode para una mejor visualización 
 \## 📁 Acceso al proyecto
 
 :globe_with_meridians: https://ecommerce-react-illi-cristian.netlify.app/ :globe_with_meridians:
