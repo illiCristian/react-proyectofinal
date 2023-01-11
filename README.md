@@ -5,7 +5,7 @@
 *[Insignias](#insignias)
 
 :memo:
-Descripción del proyecto \
+### Descripción del proyecto 
   ● Un usuario puede ingresar, navegar por los productos e ir a sus detalles. \
   ● Desde el detalle puede ver la descripción, foto y precio e ingresarlo al
 carrito.\
@@ -15,7 +15,7 @@ listado compacto de la orden con el precio total.\
   ● Al clickear ‘realizar compra’ se guarda en la base de datos una orden que
 tiene todos los productos, la fecha y da un feedback del número de orden.\
 
-[Estado del proyecto](#Estado-del-proyecto)
+###[Estado del proyecto](#Estado-del-proyecto)
   
   <h4 align="center">
 :construction: Proyecto Finalizado :construction:
@@ -34,14 +34,14 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 
 :globe_with_meridians: https://ecommerce-react-illi-cristian.netlify.app/ :globe_with_meridians:
 
-<h3>Tecnologías utilizadas<h3>
+###Tecnologías utilizadas
 
 :white_check_mark: React\
 :white_check_mark: Firebase / Firestore \
 :white_check_mark: Tailwind Css / Flowbite \
-:white_check_mark: Sweet Alert \
+:white_check_mark: Sweet Alert 
 
-Personas-Desarrolladores del Proyecto
+###Personas-Desarrolladores del Proyecto
 
 :bust_in_silhouette: Illi Cristian
 
