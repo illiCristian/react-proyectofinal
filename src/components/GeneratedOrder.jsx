@@ -1,6 +1,4 @@
 import { Alert } from "flowbite-react";
-import React from "react";
-
 const GeneratedOrder = ({ orderId }) => {
   return (
     <Alert color="info" className="rounded-none dark:bg-slate-900 ">

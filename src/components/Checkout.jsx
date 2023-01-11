@@ -1,19 +1,9 @@
-import {
-  addDoc,
-  doc,
-  collection,
-  getFirestore,
-  updateDoc,
-  writeBatch,
-  getDocs,
-  Firestore,
-
-} from "firebase/firestore";
-
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useContext, useRef, useState } from "react";
-import { Link, useHref } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import GeneratedOrder from "./GeneratedOrder";
+
 const Checkout = () => {
   const { cart, sumTotal, clearCart } = useContext(CartContext);
   const [nombre, setNombre] = useState("");
@@ -22,10 +12,8 @@ const Checkout = () => {
   const [telefono, setTelefono] = useState("");
   const [orderId, setOrderId] = useState("");
 
-  cart.forEach((items) => {});
-  const itemId = "";
-
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     const fecha = new Date();
     const order = {
       buyer: {
@@ -45,18 +33,20 @@ const Checkout = () => {
         fecha.getMonth() + 1
       }-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`,
     };
-    if (!order.buyer.name.trim()) {
-      return console.log("campo name vacio");
-    }
+
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order).then((orderId) => setOrderId(orderId.id));
     clearCart();
   };
+  const classTw =
+    "block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500";
 
   return (
     <div>
-      <form className="mt-1 mb-1 bg-slate-200 p-8 dark:bg-gray-800">
+      <form
+        onSubmit={handleClick}
+        className="mt-1 mb-1 bg-slate-200 p-8 dark:bg-gray-800">
         <div className=" mb-6 grid gap-6 md:grid-cols-2">
           <div>
             <label
@@ -65,12 +55,11 @@ const Checkout = () => {
               Nombre completo
             </label>
             <input
-              /* onInput={(e) => setNombre(e.target.value)} */
               type="text"
               id="first_name"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
-              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              className={classTw}
               placeholder="Juan"
               required
             />
@@ -86,7 +75,7 @@ const Checkout = () => {
               onChange={(e) => setTelefono(e.target.value)}
               type="tel"
               id="phone"
-              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              className={classTw}
               placeholder="11-1122-3344"
               required
             />
@@ -103,7 +92,7 @@ const Checkout = () => {
             onChange={(e) => setDireccion(e.target.value)}
             type="text"
             id="direccion"
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            className={classTw}
             placeholder="Av Siempre Viva 123"
             required
           />
@@ -119,16 +108,12 @@ const Checkout = () => {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             id="email"
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            className={classTw}
             placeholder="juan.doe@gmail.com"
             required
           />
         </div>
-
-        <button
-          onClick={handleClick}
-          type="submit"
-          className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto">
+        <button type="submit" className={classTw}>
           Generar orden de compra
         </button>
       </form>

@@ -1,6 +1,4 @@
-import React from "react";
 import Item from "./Item";
-
 const ItemList = ({ listaProductos }) => {
   return (
     <div className="mt-1 grid min-h-screen  justify-center bg-slate-200 py-20 transition-all duration-500 dark:bg-gray-800 ">

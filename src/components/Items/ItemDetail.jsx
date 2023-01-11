@@ -14,6 +14,7 @@ const ItemDetail = ({ item }) => {
   useEffect(() => {
     setItemStock(item.stock);
   }, [item]);
+
   return (
     <div>
       <div className="relative flex min-h-screen min-w-full items-start overflow-hidden bg-slate-200 p-5 dark:bg-gray-800 lg:p-10 ">

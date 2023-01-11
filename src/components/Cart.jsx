@@ -1,45 +1,9 @@
-import { IoIosTrash } from "react-icons/io";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import Form from "./Form";
 import Table from "./Table";
 import { Link } from "react-router-dom";
 const Cart = () => {
-  const { cart } = useContext(CartContext);
-  const { removeProduct } = useContext(CartContext);
-  const { sumTotal } = useContext(CartContext);
-  const { clearCart } = useContext(CartContext);
-  const { vaciarCarrito } = useContext(CartContext);
-  /*  const order = {
-    buyer: {
-      name: "Cristian",
-      email: "slasd@gmail.com",
-      phone: "1122334455",
-      addres: "siempre viva 1234",
-    },
-    items: cart.map((el) => ({
-      id: el.id,
-      name: el.name,
-      price: el.price,
-      quantity: el.quantity,
-    })),
-    totalPrice: sumTotal(),
-  }; */
-  // const handleClick = () => {
-  //   const db = getFirestore(); //traemos el firestore
-  //   const ordersCollection = collection(db, "orders"); // le pasamos la referencia y la coleccion
-  //   /* con addDoc le estamos diciendo que guarde el objeto order en la coleccion "ordersCollection" */
-  //   addDoc(ordersCollection, order) //addDoc es una promesa, hacemos un post con addoc, agregamos el objeto "order"
-  //     .then(({ id }) => console.log(id));
-  // };
-  /*  if (cart.length === 0) {
-    return (
-      <div className="text-danger border-red-800 text-center text-4xl font-bold text-red-700">
-        EL carrito esta vacio
-      </div>
-    );
-  } */
+  const { vaciarCarrito, sumTotal } = useContext(CartContext);
   return (
     <div>
       <div className="bg-slate-200 p-5 shadow-sm dark:bg-gray-800">

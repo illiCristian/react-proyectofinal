@@ -6,7 +6,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
   const [itemStock, setItemStock] = useState(stock);
   const [vendido, setVendido] = useState(false);
-
+  
   const increase = () => count < itemStock && setCount(count + 1);
   const decrease = () => count > initial && setCount(count - 1);
   const clases =

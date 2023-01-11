@@ -1,13 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import image1 from "../assets/img/p1.jpg";
-import image2 from "../assets/img/p2.jpg";
-import image3 from "../assets/img/p3.jpg";
-import image4 from "../assets/img/p4.jpg";
-import image5 from "../assets/img/p5.jpg";
-import image6 from "../assets/img/p6.jpg";
 import "../styles/galeria.css";
-
 const Galeria = () => {
   return (
     <section
@@ -24,7 +16,6 @@ const Galeria = () => {
               alt=""
             />
             <div className=" overlay ">
-              {/* overlay absolute top-0 flex h-full w-full flex-col justify-center from-cyan-200 to-cyan-400 text-center text-[18px] tracking-widest mix-blend-multiply transition hover:bg-gradient-to-r hover:opacity-100*/}
               <Link to={"/category/pantalones"}>
                 <h3>Pantalones</h3>
               </Link>
@@ -66,20 +57,6 @@ const Galeria = () => {
               <h3>Chombas</h3>
             </div>
           </div>
-          {/* <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
-            <img className="block w-full" src={image5} alt="" />
-            <div className="overlay">
-              <h3>Diseño Creativo</h3>
-              <p>Fotografía</p>
-            </div>
-          </div>
-          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
-            <img className="block w-full" src={image6} alt="" />
-            <div className="overlay">
-              <h3>Diseño Creativo</h3>
-              <p>Fotografía</p>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

@@ -1,6 +1,4 @@
-import React from "react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   return (
     <>
@@ -32,7 +30,6 @@ const Footer = () => {
           </li>
         </ul>
       </footer>
-
       <div className="bottom-0 mt-1 w-full bg-slate-200 p-4 transition-all duration-500 dark:bg-slate-800 ">
         <p className="text-center text-xl sm:text-2xl  ">
           Pagina web creada por <strong>Cristian Illi </strong> para el curso de
@@ -43,8 +40,5 @@ const Footer = () => {
     </>
   );
 };
-
 export default Footer;
-{
-  /*  */
-}
+

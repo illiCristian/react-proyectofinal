@@ -1,7 +1,4 @@
-import React from "react";
 import { Carousel } from "flowbite-react";
-import { Card } from "flowbite-react";
-
 const Carousel1 = () => {
   return (
     <>
@@ -10,7 +7,6 @@ const Carousel1 = () => {
           <Carousel className="w-full ">
             <img src="https://i.ibb.co/Mpg6Y59/img3.jpg" alt="..." />
             <img
-              // src="https://i.ibb.co/Q9sfHSW/img5.jpg"
               src="https://vermediamanager.prod.ingecloud.com/MediaFiles/Topyed/2022/12/23/1905089.jpg"
               alt="..."
             />

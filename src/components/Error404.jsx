@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 const Error404 = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">

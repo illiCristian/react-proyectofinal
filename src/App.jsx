@@ -4,13 +4,11 @@ import CartProvider from "./context/CartContext";
 import Cart from "./components/Cart";
 import Error404 from "./components/Error404";
 import Footer from "./components/Footer";
-import ItemDetail from "./components/Items/ItemDetail";
 import ItemDetailContainer from "./components/Items/ItemDetailContainer";
 import ItemListContainer from "./components/Items/ItemListContainer";
 import NavBar from "./components/NavBar";
 import Checkout from "./components/Checkout";
 import Home from "./components/Home";
-import { Flowbite } from "flowbite-react";
 import GeneratedOrder from "./components/GeneratedOrder";
 import Contactanos from "./components/Contactanos";
 
@@ -29,7 +27,6 @@ function App() {
           <Route path={"/category/:id"} element={<NavBar />} />
           <Route path={"/item/:id"} element={<ItemDetailContainer />} />
           <Route path={"*"} element={<Error404 />} />
-
           <Route path={"/cart"} element={<Cart />} />
           <Route path={"/contactanos"} element={<Contactanos />} />
           <Route path={"/checkout"} element={<Checkout />} />
