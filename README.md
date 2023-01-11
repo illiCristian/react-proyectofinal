@@ -1,8 +1,7 @@
 
 
   <h1 align="center">Proyecto final React Ecommerce creado por Cristian Illi para el curso de Coderhouse </h1>
-  
-*[Insignias](#insignias)
+
 
 :memo:
 ### Descripción del proyecto 
@@ -41,7 +40,7 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 :white_check_mark: Tailwind Css / Flowbite \
 :white_check_mark: Sweet Alert 
 
-###Personas-Desarrolladores del Proyecto
+### Personas-Desarrolladores del Proyecto
 
 :bust_in_silhouette: Illi Cristian
 
