@@ -11,11 +11,11 @@ Descripción del proyecto \
 carrito.\
   ● Una vez que el carrito podra visualizar un
 listado compacto de la orden con el precio total.\
-  ● Al ingresar su nombre, apellido, teléfono e e-mail, se activa el botón de ‘realizar compra’.\
+  ● Al ingresar su nombre, apellido, teléfono e-mail, se activa el botón de ‘realizar compra’.\
   ● Al clickear ‘realizar compra’ se guarda en la base de datos una orden que
 tiene todos los productos, la fecha y da un feedback del número de orden.\
 
-*[Estado del proyecto](#Estado-del-proyecto)
+[Estado del proyecto](#Estado-del-proyecto)
   
   <h4 align="center">
 :construction: Proyecto Finalizado :construction:
@@ -34,7 +34,8 @@ tiene todos los productos, la fecha y da un feedback del número de orden.\
 
 :globe_with_meridians: https://ecommerce-react-illi-cristian.netlify.app/ :globe_with_meridians:
 
-:white_check_mark: Tecnologías utilizadas\
+Tecnologías utilizadas\
+
 :white_check_mark: React\
 :white_check_mark: Firebase / Firestore \
 :white_check_mark: Tailwind Css / Flowbite \
