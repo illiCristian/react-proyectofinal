@@ -113,6 +113,7 @@ const Checkout = () => {
             required
           />
         </div>
+
         <button type="submit" className={classTw}>
           Generar orden de compra
         </button>
