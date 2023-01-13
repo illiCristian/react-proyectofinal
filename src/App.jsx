@@ -11,6 +11,7 @@ import Checkout from "./components/Checkout";
 import Home from "./components/Home";
 import GeneratedOrder from "./components/GeneratedOrder";
 import Contactanos from "./components/Contactanos";
+import Prueba from "./components/Prueba";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path={"/item/:id"} element={<ItemDetailContainer />} />
           <Route path={"*"} element={<Error404 />} />
           <Route path={"/cart"} element={<Cart />} />
+          <Route path={"/prueba"} element={<Prueba />} />
           <Route path={"/contactanos"} element={<Contactanos />} />
           <Route path={"/checkout"} element={<Checkout />} />
           <Route path={"/ordengenerada"} element={<GeneratedOrder />} />

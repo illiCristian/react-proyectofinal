@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <Carousel />
       <Galeria />
-      <div className="mt-1 mb-1 h-auto p-4 text-center dark:bg-gray-800">
+      <div className="mt-1 mb-1 h-auto bg-slate-300 p-4 text-center dark:bg-gray-800">
         {estado ? (
           <>
             <button className={clases} onClick={() => setEstado(!estado)}>

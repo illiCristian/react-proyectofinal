@@ -1,5 +1,4 @@
-
-function MoonIcon({ fill = "#fff", ...props }) {
+function MoonIcon({ fill = "#black", ...props }) {
   return (
     <svg
       {...props}

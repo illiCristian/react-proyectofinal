@@ -1,8 +1,12 @@
 import { Trash } from "heroicons-react";
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import IconDecrease from "./Icons/IconDecrease";
+import IconIncrease from "./Icons/IconIncrease";
 const Table = () => {
   const { cart, increase, decrease, removeProduct } = useContext(CartContext);
+  const classTw =
+    "inline-flex items-center rounded-full border border-gray-600 bg-white p-1 text-sm font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700";
   return (
     <>
       <div className="relative overflow-x-auto shadow-md">
@@ -41,45 +45,25 @@ const Table = () => {
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={() => decrease(1, el)}
-                      className="inline-flex items-center rounded-full border border-gray-600 bg-white p-1 text-sm font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:border-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className={classTw}
                       type="button">
                       <span className="sr-only">Quantity button</span>
-                      <svg
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          fillRule="evenodd"
-                          d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                          clipRule="evenodd"></path>
-                      </svg>
+                      <IconDecrease />
                     </button>
                     <div>
                       <input
                         type="number"
                         id="first_product"
-                        className="block w-14 rounded-lg border border-gray-800 bg-gray-100 px-2.5 py-1 text-center text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                        className="block w-16 rounded-lg border border-gray-800 bg-gray-100 px-2.5 py-1 text-center text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                         placeholder={el.quantity}
                       />
                     </div>
                     <button
                       onClick={() => increase(1, el)}
-                      className="inline-flex items-center rounded-full border border-gray-600 bg-white p-1 text-sm font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className={classTw}
                       type="button">
                       <span className="sr-only">Quantity button</span>
-                      <svg
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          fillRule="evenodd"
-                          d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                          clipRule="evenodd"></path>
-                      </svg>
+                      <IconIncrease />
                     </button>
                   </div>
                 </td>

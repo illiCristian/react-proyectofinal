@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -7,7 +6,7 @@ import IconSun from "./Icons/IconSun";
 import IconMoon from "./Icons/IconMoon";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import { navigation } from "../utils/navbar";
-
+import Logo from "../assets/img/logo.jpg";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -29,7 +28,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-slate-200 transition-all duration-500 dark:bg-slate-800">
+      className="bg-slate-300 transition-all duration-500 dark:bg-slate-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl border-b px-2 shadow-lg sm:px-6 lg:px-8">
@@ -50,15 +49,15 @@ export default function NavBar() {
                   <NavLink to="/">
                     <img
                       /* ml-[] */
-                      className=" block h-12 w-auto rounded-md lg:hidden"
-                      src="https://images.template.net/wp-content/uploads/2017/04/Logo-Design1.jpg"
+                      className="block h-12 w-auto rounded-md sm:hidden"
+                      src={Logo}
                       alt="Your Company"
                     />
                   </NavLink>
                   <NavLink to="/">
                     <img
-                      className="hidden h-8 w-auto rounded-md lg:block"
-                      src="https://images.template.net/wp-content/uploads/2017/04/Logo-Design1.jpg"
+                      className="hidden h-12 w-auto rounded-md sm:block"
+                      src={Logo}
                       alt="Your Company"
                     />
                   </NavLink>
@@ -88,9 +87,11 @@ export default function NavBar() {
               <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <CardWidget />
               </div>
-              <div className="flex items-center pl-2">
-                <button onClick={() => setDarkMode(!darkMode)}>
-                  {darkMode ? <IconMoon /> : <IconSun />}
+              <div className="flex items-center pl-2 ">
+                <button
+                  className="text-black"
+                  onClick={() => setDarkMode(!darkMode)}>
+                  {!darkMode ? <IconMoon /> : <IconSun />}
                 </button>
               </div>
             </div>

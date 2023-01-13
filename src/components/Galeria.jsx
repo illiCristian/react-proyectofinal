@@ -4,10 +4,10 @@ const Galeria = () => {
   return (
     <section
       id="portfolio"
-      className="min flex justify-between bg-slate-200 p-[50px,20px] dark:bg-slate-800">
-      <div className="m-auto max-w-[1100px]">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4">
-          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
+      className="flex justify-between  bg-slate-200 p-[50px,20px] dark:bg-slate-800">
+      <div className="m-auto max-w-[1100px] ">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 ">
+          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer overflow-hidden rounded-2xl">
             <img
               className="block  w-full"
               src={
@@ -21,7 +21,7 @@ const Galeria = () => {
               </Link>
             </div>
           </div>
-          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
+          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer overflow-hidden rounded-2xl">
             <img
               className="block  w-full "
               src={
@@ -35,7 +35,7 @@ const Galeria = () => {
               </Link>
             </div>
           </div>
-          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
+          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer overflow-hidden rounded-2xl">
             <img
               className="block  w-full"
               src={"https://paluca.com/fotosproductos/316_1.jpg"}
@@ -47,7 +47,7 @@ const Galeria = () => {
               </Link>
             </div>
           </div>
-          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer">
+          <div className="relative m-2.5 h-fit max-w-[300px] cursor-pointer overflow-hidden rounded-2xl">
             <img
               className="block w-full"
               src={"https://paluca.com/fotosproductos/361_1.jpg"}

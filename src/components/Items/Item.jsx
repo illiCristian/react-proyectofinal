@@ -10,10 +10,10 @@ const Item = ({ id, name, url, price, description }) => {
           </h3>
           <img src={url} className="w-full rounded-xl" />
           <h1 className="text-center font-bold">{name}</h1>
-          <p className="mt-4 cursor-pointer text-lg font-bold text-gray-800">
+          {/*   <p className="mt-4 cursor-pointer text-lg font-bold text-gray-800">
             {" "}
             {description}
-          </p>
+          </p> */}
           <p className="mt-2 mb-2 text-right sm:absolute sm:bottom-2 sm:right-2">
             Precio: $ <strong>{price}</strong>
           </p>
