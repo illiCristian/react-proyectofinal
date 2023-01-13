@@ -54,7 +54,9 @@ const Galeria = () => {
               alt=""
             />
             <div className="overlay">
-              <h3>Chombas</h3>
+              <Link to={"/category/chombas"}>
+                <h3>Chombas</h3>
+              </Link>
             </div>
           </div>
         </div>
