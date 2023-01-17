@@ -28,7 +28,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-slate-300 transition-all duration-500 dark:bg-slate-800">
+      className=" w-full bg-slate-300 transition-all duration-500 dark:bg-slate-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl border-b px-2 shadow-lg sm:px-6 lg:px-8">
